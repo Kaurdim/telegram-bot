@@ -22,9 +22,9 @@ amount.enter((ctx) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { minAmount } = yield api_1.getMinAmount(from.ticker, to.ticker);
         ctx.session.minAmount = minAmount;
-        ctx.replyWithHTML(`Введите количество ${from.name} которое вы хотите обменять.
-     Минимальное количество <b>${minAmount}</b>. 
-    `);
+        ctx.replyWithMarkdown(`
+    Введите количество ${from.name} которое вы хотите обменять.
+    Минимальное количество *${minAmount}*.`);
     }
     catch (error) {
         ctx.scene.leave();

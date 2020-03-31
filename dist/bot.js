@@ -21,6 +21,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require('dotenv').config();
 const telegraf_1 = __importStar(require("telegraf"));
+const SocksAgent = require('socks5-https-client/lib/Agent');
 const session_1 = __importDefault(require("telegraf/session"));
 const stage_1 = __importDefault(require("telegraf/stage"));
 const middelwares_1 = require("./middelwares");

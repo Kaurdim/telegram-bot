@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 import Telegraf, { Markup, ContextMessageUpdate } from 'telegraf';
+const SocksAgent = require('socks5-https-client/lib/Agent');
 import session from 'telegraf/session';
 import Stage from 'telegraf/stage';
 
@@ -57,7 +58,6 @@ async function startBot () {
     await Currencies.deleteMany({});
     const currencies = await getCurrencies();
     console.log(currencies);
-    // await Currencies.insertMany(currencies);
   } catch (error) {
     process.exit(0);
   }

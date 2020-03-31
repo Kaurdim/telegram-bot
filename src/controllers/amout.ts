@@ -11,9 +11,9 @@ amount.enter(async (ctx: ContextMessageUpdate) => {
   try {
     const { minAmount } = await getMinAmount(from.ticker, to.ticker);
     ctx.session.minAmount = minAmount;
-    ctx.replyWithHTML(`Введите количество ${from.name} которое вы хотите обменять.
-     Минимальное количество <b>${minAmount}</b>. 
-    `);
+    ctx.replyWithMarkdown(`
+    Введите количество ${from.name} которое вы хотите обменять.
+    Минимальное количество *${minAmount}*.`);
   } catch (error) {
     ctx.scene.leave();
     ctx.scene.enter('selectTo');
